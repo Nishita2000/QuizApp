@@ -6,6 +6,7 @@ class IntroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Text('Quiz App'),
       ),
       body: Center(
@@ -29,6 +30,9 @@ class IntroPage extends StatelessWidget {
                   ),
                 );
               },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.blueGrey), // Change the color here
+              ),
               child: Text('Start Quiz'),
             ),
           ],

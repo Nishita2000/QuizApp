@@ -10,6 +10,7 @@ class FinalPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Text('Quiz Result'),
       ),
       body: Center(

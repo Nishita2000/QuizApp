@@ -238,6 +238,7 @@ class _QuizPageState extends State<QuizPage> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Text('Quiz Page'),
       ),
       body: Padding(
@@ -265,6 +266,7 @@ class _QuizPageState extends State<QuizPage> {
                     title: Text(option),
                     value: option,
                     groupValue: questions[questionIndex].selectedOption,
+                    activeColor: Colors.blueGrey,
                     onChanged: (value) {
                       setState(() {
                         questions[questionIndex].selectedOption =
@@ -281,6 +283,9 @@ class _QuizPageState extends State<QuizPage> {
                   answerQuestion(questions[questionIndex].selectedOption!);
                 }
               },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.blueGrey), // Change the color here
+              ),
               child: Text(buttonText),
             ),
             SizedBox(height: 16),
@@ -291,6 +296,7 @@ class _QuizPageState extends State<QuizPage> {
             SizedBox(height: 16),
             LinearProgressIndicator(
               value: progressValue,
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.blueGrey),
             ),
             Text(
               'Time remaining: $secondsRemaining seconds',
